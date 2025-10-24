@@ -4,7 +4,7 @@ import { sveltePreprocess } from "svelte-preprocess";
 import { mdsvex } from "mdsvex";
 
 import scss_config from "./scss-config.js";
-
+import { remark_alerts } from "./preprocess-alerts.js";
 
 const config = {
   extensions: [".svelte", ".md", ".svx"],
@@ -35,6 +35,7 @@ const config = {
   preprocess: [
     mdsvex({
       extensions: [".md", ".svx"],
+      remarkPlugins: [remark_alerts],
     }),
     sveltePreprocess({
       scss: scss_config,
