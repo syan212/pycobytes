@@ -37,6 +37,25 @@ img {
   box-shadow: 0 2px 8px light-dark(#aaa, white);
 }
 
+blockquote {
+  --col: #{$col-up};
+  padding-left: 1em;
+  color: $col-text-deut;
+  border-left: 2px solid var(--col);
+
+  .gfm-alert-indicator {
+    margin-bottom: -0.5em;
+    color: $col-up;
+    color: var(--col);
+    font-size: 90%;
+    font-weight: 450;
+  }
+
+  &.gfm-alert.tip {
+    --col: #{$col-up};
+  }
+}
+
 blockquote:first-child {
   $width-factor: 15%;
   padding: 0 0 2rem;
